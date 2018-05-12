@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineagsOs Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,33 @@
  * limitations under the License.
  */
 
-package org.lineageos.hardware;
+package org.mokee.hardware;
 
-import org.lineageos.internal.util.FileUtils;
+import org.mokee.internal.util.FileUtils;
 
-/**
- * Glove mode / high touch sensitivity
+/*
+ * Disable capacitive keys
+ *
+ * This is intended for use on devices in which the capacitive keys
+ * can be fully disabled for replacement with a soft navbar. You
+ * really should not be using this on a device with mechanical or
+ * otherwise visible-when-inactive keys
  */
-public class HighTouchSensitivity {
-    private static final String CONTROL_PATH = "/sys/class/tp_glove/device/glove_enable";
+
+public class KeyDisabler {
+
+    private static String CONTROL_PATH = "/proc/touchpanel/capacitive_keys_disable";
 
     public static boolean isSupported() {
-	return FileUtils.isFileWritable(CONTROL_PATH);
+        return FileUtils.isFileWritable(CONTROL_PATH);
     }
 
-    public static boolean isEnabled() {
+    public static boolean isActive() {
         return FileUtils.readOneLine(CONTROL_PATH).equals("1");
     }
 
-    public static boolean setEnabled(boolean state) {
+    public static boolean setActive(boolean state) {
         return FileUtils.writeLine(CONTROL_PATH, state ? "1" : "0");
     }
+
 }
