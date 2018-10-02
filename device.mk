@@ -24,6 +24,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
 # Inherit from msm8953-common
 $(call inherit-product, device/xiaomi/msm8953-common/msm8953.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/xiaomi/mido
+
 # Audio configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
