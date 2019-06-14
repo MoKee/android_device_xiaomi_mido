@@ -31,6 +31,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG := mido_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mido
 
 # Partitions
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
