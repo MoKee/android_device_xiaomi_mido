@@ -38,3 +38,4 @@ service goodix_script /vendor/bin/init.goodix.sh
 on property:init.svc.qcom-post-boot=stopped
     # Set min gpu freq as 320mhz
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 320000000
+    write /proc/sys/vm/swappiness 20
