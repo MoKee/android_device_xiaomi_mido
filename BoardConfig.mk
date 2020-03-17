@@ -31,6 +31,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += loop.max_part=7
 TARGET_KERNEL_CONFIG := mokee_mido_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mido
 
