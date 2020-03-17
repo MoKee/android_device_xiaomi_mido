@@ -30,6 +30,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := mokee_mido_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mido
 
